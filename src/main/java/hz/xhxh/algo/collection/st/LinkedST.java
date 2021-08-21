@@ -111,26 +111,5 @@ public class LinkedST<K,V> implements SymbolTable<K,V>{
         }
     }
 
-    public static void main(String...args) throws URISyntaxException, FileNotFoundException, MalformedURLException {
-        SymbolTable<String,Integer> st = new LinkedST<>();
-        Scanner scanner = new Scanner(
-                new BufferedInputStream(new FileInputStream(
-                        new File(Paths.get("fonts.txt").toUri()))),
-                StandardCharsets.UTF_8);
-        for(int i=0; scanner.hasNext(); i++){
-            st.put(scanner.nextLine(),i);
-        }
-        scanner.close();
 
-        Font.getFamilies().forEach(s -> {
-            if(st.contains(s)) st.delete(s);
-            else {
-                System.out.println("[st not contain]  " + s);
-            }
-        });
-
-        for(String s :st.keys()){
-            System.out.println(s);
-        }
-    }
 }
