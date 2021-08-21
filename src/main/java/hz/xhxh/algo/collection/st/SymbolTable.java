@@ -5,19 +5,13 @@ public interface SymbolTable<Key, Value> {
 
     Value get(Key k);
 
-    default void delete(Key k){
-        put(k,null);
-    };
+    Value delete(Key k);
 
     int size();
 
-    default boolean contains(Key k){
-        return null != get(k);
-    }
+    boolean contains(Key k);
 
-    default boolean isEmpty(){
-        return 0 == size();
-    }
+    boolean isEmpty();
 
     Iterable<Key> keys();
 }

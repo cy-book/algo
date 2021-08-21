@@ -1,8 +1,10 @@
 package hz.xhxh.algo.collection.queue;
 
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class SimpleQueue<T> implements Queue<T>{
+public class SimpleQueue<T> implements Queue<T>, Iterable<T>{
     private static final int MIN_SIZE = 2;
 
     private T[] queue ;
@@ -39,6 +41,11 @@ public class SimpleQueue<T> implements Queue<T>{
     @Override
     public int size() {
         return (rear - front + queue.length) % queue.length;
+    }
+
+    @Override
+    public Iterator<T> iterator(){
+        return Arrays.stream(queue).limit(size()).iterator();
     }
 
     private void resize(int capacity){

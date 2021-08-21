@@ -15,6 +15,11 @@ public class SimpleBag<T> implements Bag<T>{
         n = 0;
     }
 
+    public SimpleBag(int capacity){
+        bag = (T[]) new Object[capacity];
+        n = 0;
+    }
+
     @Override
     public synchronized boolean add(T t) {
         if(n >= bag.length) resize(bag.length *2);
