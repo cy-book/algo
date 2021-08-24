@@ -18,7 +18,7 @@ public class SortTest {
             arr1[i] = r.nextInt() % 100;
             arr2[i] = SIZE - i;
         }
-        var sort = new QuickSort<Integer>();
+        var sort = new HeapSort<Integer>();
         var arr = arr1.clone();
         System.out.println("using " + sort.getClass().getSimpleName());
         sort.sort(arr);

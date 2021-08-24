@@ -28,6 +28,7 @@ public interface ComparableSymbolTable<Key extends Comparable<Key>, Value> exten
     Key max();
 
     /*
+     * 向下取整
      * 获得符号表中小于或等于给定key的最大的键
      *
      * @param key 要比较的键
@@ -37,7 +38,7 @@ public interface ComparableSymbolTable<Key extends Comparable<Key>, Value> exten
     Key floor(Key key);
 
     /*
-     *  向下取整
+     *  向上取整
      *  获得符号表中大于或等于给定key的最小键
      *
      * @param key 要比较的键
@@ -47,7 +48,6 @@ public interface ComparableSymbolTable<Key extends Comparable<Key>, Value> exten
     Key ceiling(Key key);
 
     /*
-     * 向上取整
      * 给出符号表中小于key的键的数量
      *
      * @param key 要计算位置的键
