@@ -2,44 +2,33 @@ package hz.xhxh.algo.collection.st;
 
 import hz.xhxh.algo.collection.bag.Bag;
 import hz.xhxh.algo.collection.bag.SimpleBag;
-import javafx.scene.text.Font;
-
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Paths;
 import java.util.NoSuchElementException;
-import java.util.Scanner;
 
 /*
-* 采用链表结构来实现符号表，通过遍历链表查找至
-* 优点： 插入时方便
-* 缺点： 查找需要遍历链表，插入，删除等操作需要查找为前提
-* */
-public class LinkedST<K,V> implements SymbolTable<K,V>{
+ * 采用链表结构来实现符号表，通过遍历链表查找至
+ * 优点： 插入时方便
+ * 缺点： 查找需要遍历链表，插入，删除等操作需要查找为前提
+ * */
+public class LinkedST<K, V> implements SymbolTable<K, V> {
     private Node first;
     private int n;
 
     @Override
     public void put(K k, V v) {
-        for(Node cur = first; cur!=null; cur=cur.next){
-            if(cur.key.equals(k)) {
+        for (Node cur = first; cur != null; cur = cur.next) {
+            if (cur.key.equals(k)) {
                 cur.value = v;
-                n +=1;
+                n += 1;
                 return;
             }
         }
-        first = new Node(k,v,first);
+        first = new Node(k, v, first);
     }
 
     @Override
     public V get(K k) {
-        for(Node cur = first; cur != null; cur = cur.next){
-            if(cur.key.equals(k)) return cur.value;
+        for (Node cur = first; cur != null; cur = cur.next) {
+            if (cur.key.equals(k)) return cur.value;
         }
         return null;
     }
@@ -51,8 +40,8 @@ public class LinkedST<K,V> implements SymbolTable<K,V>{
 
     @Override
     public boolean contains(K k) {
-        for(Node cur = first; cur != null; cur = cur.next){
-            if(cur.key.equals(k)) return true;
+        for (Node cur = first; cur != null; cur = cur.next) {
+            if (cur.key.equals(k)) return true;
         }
         return false;
     }
@@ -63,48 +52,43 @@ public class LinkedST<K,V> implements SymbolTable<K,V>{
     }
 
     @Override
-    public V delete(K k){
-        if(null ==first){
+    public void delete(K k) {
+        if (null == first) {
             throw new NoSuchElementException();
         }
 
-        if(first.key.equals(k)){
-            var v = first.value;
+        if (first.key.equals(k)) {
             first = first.next;
             n--;
-            return v;
+            return ;
         }
 
         for (Node cur = first.next, front = first; cur != null; ) {
-            if(cur.key.equals(k)){
-                var v = cur.value;
+            if (cur.key.equals(k)) {
                 front.next = cur.next;
-                n--;
-                return v;
+                n--;return ;
             }
             front = cur;
             cur = cur.next;
         }
-
-        return null;
     }
 
     @Override
     public Iterable<K> keys() {
         Bag<K> keysBag = new SimpleBag<>();
-        for(Node cur=first; cur!=null; cur = cur.next){
+        for (Node cur = first; cur != null; cur = cur.next) {
             keysBag.add(cur.key);
         }
 
         return keysBag;
     }
 
-    private class Node{
-        V value;
-        K key;
-        Node next;
+    private class Node {
+        private V value;
+        private final K key;
+        private Node next;
 
-        public Node(K key, V value, Node next){
+        public Node(K key, V value, Node next) {
             this.key = key;
             this.value = value;
             this.next = next;

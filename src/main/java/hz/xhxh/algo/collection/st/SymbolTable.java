@@ -5,7 +5,7 @@ public interface SymbolTable<Key, Value> {
 
     Value get(Key k);
 
-    Value delete(Key k);
+    void delete(Key k);
 
     int size();
 

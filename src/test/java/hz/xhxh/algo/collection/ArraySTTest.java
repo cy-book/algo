@@ -3,7 +3,7 @@ package hz.xhxh.algo.collection;
 import hz.xhxh.algo.collection.st.ArrayST;
 import org.junit.Test;
 
-public class ArraySTText {
+public class ArraySTTest {
     @Test
     public  void testArrayST() {
         char[] arr = "abcdefghijkl".toCharArray();
@@ -28,6 +28,8 @@ public class ArraySTText {
             System.out.format("delete [%s]%n",st.max());
             st.deleteMax();
         }
+
+        System.out.format("symbol table is empty: %s%n",st.isEmpty());
 
 
     }

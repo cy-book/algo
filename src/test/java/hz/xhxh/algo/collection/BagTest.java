@@ -18,13 +18,13 @@ public class BagTest {
     private void bagRemoveUseIterator() {
         var bag = getBag();
         System.out.println(bag);
-       // bag.removeIf(i -> Math.sqrt(i) % 2 == 0);
+        // bag.removeIf(i -> Math.sqrt(i) % 2 == 0);
         System.out.println(bag);
     }
 
     private void bagRemove() {
         var bag = getBag();
-        System.out.printf("bag contains 0:%b%n",bag.contains(0));
+        System.out.printf("bag contains 0:%b%n", bag.contains(0));
         System.out.println(bag);
         for (int i = 0; i < 20; i++) {
             if (i % 2 == 0) {
@@ -32,18 +32,18 @@ public class BagTest {
             }
         }
         System.out.println(bag);
-        for(var i : bag){
-            System.out.printf(i+", ");
+        for (var i : bag) {
+            System.out.printf(i + ", ");
         }
 
     }
 
-    private void bagContains(){
+    private void bagContains() {
         var bag = getBag();
         //var array = bag.toArray();
-       // System.out.println(Arrays.toString(array));
+        // System.out.println(Arrays.toString(array));
         System.out.println(bag);
-      //  for(Object i: array){
+        //  for(Object i: array){
         //    if(!bag.contains(i)){
         //        System.out.printf("bag not contains %s%n",i.toString());
         //    }
