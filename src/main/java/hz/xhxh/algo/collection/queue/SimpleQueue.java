@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class SimpleQueue<T> implements Queue<T>, Iterable<T>{
+public class SimpleQueue<T> implements Queue<T>{
     private static final int MIN_SIZE = 2;
 
     private T[] queue ;

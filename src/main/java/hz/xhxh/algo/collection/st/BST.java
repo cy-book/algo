@@ -86,7 +86,7 @@ public class BST<Key extends Comparable<Key>, Value> implements ComparableSymbol
         return contains(root, key);
     }
 
-    public boolean contains(Node x, Key k) {
+    private boolean contains(Node x, Key k) {
         if (null == x) return false;
         int cmp = k.compareTo(x.key);
         if (cmp > 0) return contains(x.right, k);

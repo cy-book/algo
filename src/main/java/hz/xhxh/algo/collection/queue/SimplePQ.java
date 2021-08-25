@@ -1,5 +1,8 @@
 package hz.xhxh.algo.collection.queue;
 
+import java.util.Arrays;
+import java.util.Iterator;
+
 public class SimplePQ<T extends Comparable<T>> implements MaxPriorityQueue<T> {
     /*
     * root == heap[1];
@@ -11,16 +14,14 @@ public class SimplePQ<T extends Comparable<T>> implements MaxPriorityQueue<T> {
     private T[] heap;
     private int N;
     private final int root = 1;
-    private int SIZE_MAX ;
     public SimplePQ(int capacity){
         heap = (T[])new Comparable[capacity + 1];
         N = 0;
-        SIZE_MAX = capacity;
     }
 
     @Override
     public void insert(T v) {
-        if(SIZE_MAX == N) throw new IndexOutOfBoundsException("队列已满");
+        if(heap.length == N+1) resize(N * 2 + 1);
         heap[++ N ] = v;
         swim(N);
     }
@@ -45,6 +46,9 @@ public class SimplePQ<T extends Comparable<T>> implements MaxPriorityQueue<T> {
         heap[N] = null;
         N --;
         sink(root);
+
+        if(N > 0 && N < heap.length/4)resize(heap.length /2 + 1);
+
         return v;
     }
 
@@ -107,5 +111,18 @@ public class SimplePQ<T extends Comparable<T>> implements MaxPriorityQueue<T> {
         var tmp = heap[i];
         heap[i] = heap[j];
         heap[j] = tmp;
+    }
+
+    private void resize(int capacity){
+        assert capacity > N;
+
+        T[] copy = (T[]) new Comparable[capacity];
+        System.arraycopy(heap,0,copy,0,N+1);
+        heap = copy;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return Arrays.stream(heap).iterator();
     }
 }
