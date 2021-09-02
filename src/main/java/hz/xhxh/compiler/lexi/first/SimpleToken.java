@@ -1,7 +1,5 @@
 package hz.xhxh.compiler.lexi.first;
 
-import hz.xhxh.compiler.lexi.token.TokenType;
-
 import java.io.*;
 
 public class SimpleToken implements Token,Cloneable ,Serializable{

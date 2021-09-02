@@ -2,9 +2,8 @@ package hz.xhxh.compiler.lexi.first;
 
 import hz.xhxh.algo.collection.queue.Queue;
 import hz.xhxh.algo.collection.queue.SimpleQueue;
-import hz.xhxh.compiler.lexi.token.TokenType;
+import static hz.xhxh.compiler.lexi.first.Utilities.*;
 
-import static hz.xhxh.compiler.lexi.Utilities.*;
 
 public class SimpleLexer {
     public static void main(String[] args) {

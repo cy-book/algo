@@ -1,4 +1,4 @@
-package hz.xhxh.compiler.lexi.token;
+package hz.xhxh.compiler.lexi.first;
 
 public enum TokenType {
     EQ,                 /* == */

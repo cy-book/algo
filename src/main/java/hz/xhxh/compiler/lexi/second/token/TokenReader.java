@@ -1,10 +1,10 @@
-package hz.xhxh.compiler.lexi.token;
+package hz.xhxh.compiler.lexi.second.token;
 
 public interface TokenReader {
     /*
     * @return 从token流中读取一个token,并取出。 如果流为空，则返回null
     * */
-    Token read();
+    hz.xhxh.compiler.lexi.first.Token read();
 
     /*
     * @return 从token流中读取一个token,不取出。 如果流为空，则返回null.

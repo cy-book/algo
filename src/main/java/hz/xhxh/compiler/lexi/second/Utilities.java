@@ -1,4 +1,4 @@
-package hz.xhxh.compiler.lexi;
+package hz.xhxh.compiler.lexi.second;
 
 public class Utilities {
     public static boolean isAlpha(char ch){

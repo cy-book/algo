@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class LinkedSTTest {
@@ -18,8 +19,7 @@ public class LinkedSTTest {
     public void testLinkedST() throws FileNotFoundException  {
         SymbolTable<String,Integer> st = new LinkedST<>();
         Scanner scanner = new Scanner(
-                new BufferedInputStream(new FileInputStream(
-                        new File(Paths.get("fonts.txt").toUri()))),
+                new BufferedInputStream(Objects.requireNonNull(this.getClass().getResourceAsStream("/fonts.txt"))),
                 StandardCharsets.UTF_8);
         for(int i=0; scanner.hasNext(); i++){
             st.put(scanner.nextLine(),i);

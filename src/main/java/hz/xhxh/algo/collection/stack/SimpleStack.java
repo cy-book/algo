@@ -1,6 +1,8 @@
 package hz.xhxh.algo.collection.stack;
 
+import java.util.Arrays;
 import java.util.EmptyStackException;
+import java.util.Iterator;
 
 public class SimpleStack<T> implements Stack<T>{
     private static final int MIN_SIZE = 2;
@@ -57,6 +59,11 @@ public class SimpleStack<T> implements Stack<T>{
         T[] copy = (T[]) new Object[capacity];
         System.arraycopy(stack,0,copy,0,top+1);
         stack = copy;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return Arrays.stream(stack).limit(size()).iterator();
     }
 
 //    @Override

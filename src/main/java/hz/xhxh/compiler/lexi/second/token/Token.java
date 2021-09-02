@@ -1,6 +1,5 @@
-package hz.xhxh.compiler.lexi.second;
+package hz.xhxh.compiler.lexi.second.token;
 
-import hz.xhxh.compiler.lexi.token.TokenType;
 
 public interface Token {
     /*

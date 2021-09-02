@@ -1,7 +1,5 @@
 package hz.xhxh.compiler.lexi.first;
 
-import hz.xhxh.compiler.lexi.token.TokenType;
-
 public interface Token {
     /*
     * @return token的类型
