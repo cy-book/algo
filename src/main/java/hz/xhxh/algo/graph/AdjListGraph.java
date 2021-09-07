@@ -10,7 +10,7 @@ public class AdjListGraph extends AbstractGraph{
 
     public AdjListGraph(int V){
         this.V = V;
-        adj =(Bag<Integer>[]) new Bag[V];
+        adj = (Bag<Integer>[]) new Bag[V];
         for(int v = 0; v < V; v++){
             adj[v] = new SimpleBag<>();
         }

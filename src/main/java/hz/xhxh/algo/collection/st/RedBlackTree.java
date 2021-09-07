@@ -3,7 +3,7 @@ package hz.xhxh.algo.collection.st;
 import hz.xhxh.algo.collection.queue.Queue;
 import hz.xhxh.algo.collection.queue.SimplePQ;
 
-public class RedBlackTree<K extends Comparable<K>, V> implements SymbolTable<K, V> {
+public class RedBlackTree<K extends Comparable<K>, V> implements ST<K, V> {
     private Node root;
 
     enum Color {

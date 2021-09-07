@@ -1,11 +1,20 @@
 package hz.xhxh.compiler.lexi.second.token;
 
 public enum TokenType {
+    Init,               /*未定义的token*/
+    Error,
+    BLANK,
+
     EQ,                 /* == */
     GE,                 /* >= */
     GT,                 /* > */
     LE,                 /* <= */
     LT,                 /* < */
+
+    Plus,
+    Minus,
+    Star,
+    Slash,
 
     Assignment,         /* = */
 

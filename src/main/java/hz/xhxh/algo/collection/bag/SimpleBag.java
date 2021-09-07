@@ -82,13 +82,11 @@ public class SimpleBag<T> implements Bag<T>{
 
     @Override
     public Iterator<T> iterator() {
-        shuffle();
         return Arrays.stream(bag).limit(n).iterator();
     }
 
     @Override
     public String toString(){
-        shuffle();
         StringBuilder builder = new StringBuilder("[");
         for(int i=0; i<n; i++){
             builder.append(bag[i]).append(", ");
@@ -97,7 +95,7 @@ public class SimpleBag<T> implements Bag<T>{
         return builder.toString();
     }
 
-    private void shuffle(){
+    public void shuffle(){
         T temp = null;
         for(int i=0;i<n;i++){
             int r = i + random.nextInt(n-i);

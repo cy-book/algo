@@ -4,7 +4,7 @@ import hz.xhxh.algo.collection.queue.SimpleQueue;
 
 import java.util.NoSuchElementException;
 
-public class ArrayST<K extends Comparable<K>, V> implements ComparableSymbolTable<K, V> {
+public class ArrayST<K extends Comparable<K>, V> implements ComparableST<K, V> {
     private static final int MIN_SIZE = 2;
     private K[] keys;
     private V[] values;
@@ -81,6 +81,9 @@ public class ArrayST<K extends Comparable<K>, V> implements ComparableSymbolTabl
 
     @Override
     public boolean contains(K k) {
+        if(null == k) throw new IllegalArgumentException("参数不能为null");
+        int index = rank(k);
+        if( index >= size()) return false;
         return k.compareTo(keys[rank(k)]) == 0;
     }
 
@@ -164,7 +167,8 @@ public class ArrayST<K extends Comparable<K>, V> implements ComparableSymbolTabl
 
     @Override
     public K select(int k) {
-        if (k < 0 || k >= N) throw new IndexOutOfBoundsException("k的大小超出类符号表中元素个数的范围");
+        if (k < 0 || k >= N) throw new IndexOutOfBoundsException("k的大小超出类符号表中元素个数的范围: "
+                + String.format("%d out of %d",k, N));
         return keys[k];
     }
 

@@ -3,7 +3,7 @@ package hz.xhxh.algo.collection.st;
 import hz.xhxh.algo.collection.queue.Queue;
 import hz.xhxh.algo.collection.queue.SimpleQueue;
 
-public class BST<Key extends Comparable<Key>, Value> implements ComparableSymbolTable<Key, Value> {
+public class BST<Key extends Comparable<Key>, Value> implements ComparableST<Key, Value> {
     private Node root;
 
     public BST() {

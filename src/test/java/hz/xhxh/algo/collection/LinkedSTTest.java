@@ -1,23 +1,20 @@
 package hz.xhxh.algo.collection;
 
 import hz.xhxh.algo.collection.st.LinkedST;
-import hz.xhxh.algo.collection.st.SymbolTable;
+import hz.xhxh.algo.collection.st.ST;
 import javafx.scene.text.Font;
 import org.junit.Test;
 
 import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class LinkedSTTest {
     @Test
     public void testLinkedST() throws FileNotFoundException  {
-        SymbolTable<String,Integer> st = new LinkedST<>();
+        ST<String,Integer> st = new LinkedST<>();
         Scanner scanner = new Scanner(
                 new BufferedInputStream(Objects.requireNonNull(this.getClass().getResourceAsStream("/fonts.txt"))),
                 StandardCharsets.UTF_8);

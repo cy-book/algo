@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
  * 优点： 插入时方便
  * 缺点： 查找需要遍历链表，插入，删除等操作需要查找为前提
  * */
-public class LinkedST<K, V> implements SymbolTable<K, V> {
+public class LinkedST<K, V> implements ST<K, V> {
     private Node first;
     private int n;
 

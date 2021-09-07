@@ -19,8 +19,15 @@ public interface Token {
     void setType(TokenType type);
 
     /*
-     * @param text
+     * @param str
      * 更新token的文本值
      * */
-    void setText(String text);
+    void append(String str);
+
+    void append(char ch);
+
+    /*
+    * @param str 从token中剪去最后一个字节
+    * */
+    void delete();
 }

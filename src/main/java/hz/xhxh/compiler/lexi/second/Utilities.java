@@ -9,8 +9,23 @@ public class Utilities {
         return (ch <='9' && ch >= '0');
     }
 
-    public static boolean isGT(char ch){
-        return ch == '>';
+    public static boolean isJudge(char ch){
+        return '=' == ch || '<' == ch || ch == '>';
+    }
+
+    public static boolean isOperator(char ch){
+        return '+' == ch || '-' == ch || '*' == ch || '/' == ch;
+    }
+
+    public static boolean isSpecial(char ch){
+        switch (ch){
+            case '(':
+            case ')':
+            case ';':
+                return true;
+            default:
+                return false;
+        }
     }
 
     public static boolean isBlank(char ch){

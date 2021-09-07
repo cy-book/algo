@@ -63,7 +63,25 @@ public class SimpleStack<T> implements Stack<T>{
 
     @Override
     public Iterator<T> iterator() {
-        return Arrays.stream(stack).limit(size()).iterator();
+        return new StackIterator();
+    }
+
+    private class StackIterator implements Iterator<T>{
+        private int t;
+
+        public StackIterator(){
+            this.t = SimpleStack.this.top;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return t >= 0;
+        }
+
+        @Override
+        public T next() {
+            return stack[t--];
+        }
     }
 
 //    @Override

@@ -1,6 +1,6 @@
 package hz.xhxh.algo.collection.st;
 
-public interface SymbolTable<Key, Value> {
+public interface ST<Key, Value> {
     void put(Key k, Value v);
 
     Value get(Key k);

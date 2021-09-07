@@ -1,6 +1,6 @@
 package hz.xhxh.algo.collection.st;
 
-public interface ComparableSymbolTable<Key extends Comparable<Key>, Value> extends SymbolTable<Key, Value> {
+public interface ComparableST<Key extends Comparable<Key>, Value> extends ST<Key, Value> {
     /*
      * 向符号表中插入一个键值对 {k,v},key不能时null ，如果符号表中没有这个k，则正常插入，
      * 否则，使用v替换调 原来符号表中与k对应的值

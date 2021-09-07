@@ -1,14 +1,16 @@
 PACKAGE := hz.xhxh.algo
 CODE_FILE := $(shell find src/main/java -name "*.java")
 SRC_DIR := ./src/main/java
-RESOURCE_DIR := ./src/main/resources/*
+RESOURCE_DIR := ./src/main/resources
 MAIN := hz.xhxh.algo.Main
 OUT_DIR := ./target/classes
 
 
 build:
-	@javac -d $(OUT_DIR) $(CODE_FILE) 
-	@cp -r $(RESOURCE_DIR) $(OUT_DIR)
+	@javac -d $(OUT_DIR) $(CODE_FILE)
+ifneq ($(shell ls $(RESOURCE_DIR)),)
+	@cp -r $(RESOURCE_DIR)/* $(OUT_DIR)
+endif
 
 run: build
 	@java -cp $(OUT_DIR) $(MAIN)
