@@ -1,4 +1,4 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 /*
 * CC == connected components

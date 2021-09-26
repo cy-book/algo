@@ -1,4 +1,4 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 /*
 * 对图进行搜索，构造函数应为Search(Graph g,int v);

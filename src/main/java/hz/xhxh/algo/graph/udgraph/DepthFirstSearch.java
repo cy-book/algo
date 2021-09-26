@@ -1,4 +1,4 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 public class DepthFirstSearch implements Search {
     private final boolean[] marked;

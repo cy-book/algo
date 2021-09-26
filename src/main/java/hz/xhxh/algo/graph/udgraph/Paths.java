@@ -1,4 +1,4 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 /*
 * 给定一个图和图中一个点

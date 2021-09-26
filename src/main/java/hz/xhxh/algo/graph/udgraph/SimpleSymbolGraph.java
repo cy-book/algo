@@ -1,4 +1,4 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 import hz.xhxh.algo.collection.st.ArrayST;
 import hz.xhxh.algo.collection.st.ComparableST;

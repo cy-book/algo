@@ -1,4 +1,4 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 public interface Graph {
     /*获取图中顶点的个数
@@ -60,9 +60,5 @@ public interface Graph {
     * @return 返回图中自环的个数
     * */
     int numberOfSelfLoops();
-
-    @Override
-    String toString();
-
 
 }

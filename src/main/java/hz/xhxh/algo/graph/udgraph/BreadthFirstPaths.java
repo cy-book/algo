@@ -1,4 +1,4 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 import hz.xhxh.algo.collection.queue.Queue;
 import hz.xhxh.algo.collection.queue.SimpleQueue;

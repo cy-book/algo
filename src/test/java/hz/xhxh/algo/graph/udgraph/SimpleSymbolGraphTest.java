@@ -1,4 +1,4 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 import hz.xhxh.algo.collection.st.ArrayST;
 import hz.xhxh.algo.collection.st.ST;
@@ -9,14 +9,14 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class SimpleSymbolGraphTest extends TestCase {
-    public void testSimpleSymbolGraph(){
+    public void testSimpleSymbolGraph() {
         Scanner in = new Scanner(
                 Objects.requireNonNull(
                         this.getClass().getResourceAsStream(
-                                "/graph/routes.txt"))
+                                "/udgraph/routes.txt"))
         );
-        ST<String,Integer> st = new ArrayST<>();
-        while(in.hasNext()){
+        ST<String, Integer> st = new ArrayST<>();
+        while (in.hasNext()) {
             String[] s = in.nextLine().split(" ");
             System.out.println(Arrays.toString(s));
             for (String value : s) {
@@ -28,26 +28,26 @@ public class SimpleSymbolGraphTest extends TestCase {
         in = new Scanner(
                 Objects.requireNonNull(
                         this.getClass().getResourceAsStream(
-                                "/graph/routes.txt"))
+                                "/udgraph/routes.txt"))
         );
-        while(in.hasNext()){
+        while (in.hasNext()) {
             String[] s = in.nextLine().split(" ");
-            graph.addEdge(s[0],s[1]);
+            graph.addEdge(s[0], s[1]);
         }
         System.out.println(graph.G());
 
         in.close();
         Iterable<String> i = Arrays.asList("JFK", "MCO", "LAX", "HHE");
-        for(String source : i)
-            if(graph.contains(source)){
+        for (String source : i)
+            if (graph.contains(source)) {
                 int s = graph.index(source);
                 System.out.println(source);
-                for(int w : graph.G().adj(s)){
+                for (int w : graph.G().adj(s)) {
                     System.out.println("    " + graph.name(w));
                 }
-            }else {
+            } else {
                 System.out.println("input not contain '" + source + "'");
             }
-        }
-
     }
+
+}

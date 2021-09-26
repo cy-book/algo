@@ -1,4 +1,4 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 /*
 * 符号图用来将图的顶点与字符串关联起来

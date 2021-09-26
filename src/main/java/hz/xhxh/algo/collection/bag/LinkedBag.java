@@ -154,7 +154,9 @@ public class LinkedBag<Item> implements Collection<Item>, Bag<Item> {
             builder.append(cur.value.toString()).append(", ");
             cur = cur.next;
         }
-        builder.delete(builder.length()-2,builder.length());
+        if(builder.length() > 1)
+            builder.delete(builder.length()-2,builder.length());
+
         builder.append("]");
         return builder.toString();
     }

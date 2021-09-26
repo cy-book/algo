@@ -1,17 +1,17 @@
-package hz.xhxh.algo.graph;
+package hz.xhxh.algo.graph.udgraph;
 
 import hz.xhxh.algo.collection.bag.Bag;
 import hz.xhxh.algo.collection.bag.SimpleBag;
 
-public class AdjListGraph extends AbstractGraph{
+public class AdjListGraph extends AbstractGraph {
     private final int V;
     private int E;
     private final Bag<Integer>[] adj;
 
-    public AdjListGraph(int V){
+    public AdjListGraph(int V) {
         this.V = V;
         adj = (Bag<Integer>[]) new Bag[V];
-        for(int v = 0; v < V; v++){
+        for (int v = 0; v < V; v++) {
             adj[v] = new SimpleBag<>();
         }
     }
@@ -22,7 +22,7 @@ public class AdjListGraph extends AbstractGraph{
     }
 
     @Override
-    public int V(){
+    public int V() {
         return this.V;
     }
 
@@ -30,7 +30,7 @@ public class AdjListGraph extends AbstractGraph{
     public void addEdge(int v, int w) {
         adj[v].add(w);
         adj[w].add(v);
-        E ++;
+        E++;
     }
 
     @Override
