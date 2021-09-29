@@ -1,7 +1,7 @@
 package hz.xhxh.algo.collection;
 
 import hz.xhxh.algo.collection.queue.MaxPriorityQueue;
-import hz.xhxh.algo.collection.queue.SimplePQ;
+import hz.xhxh.algo.collection.queue.SimpleMaxPQ;
 import org.junit.Test;
 
 import java.util.Random;
@@ -11,7 +11,7 @@ public class PriorityQueueTest {
 
     @Test
     public void testPriorityQueue(){
-        MaxPriorityQueue<Integer> pq = new SimplePQ<>(SIZE);
+        MaxPriorityQueue<Integer> pq = new SimpleMaxPQ<>(SIZE);
         new Random().ints(20,100).limit(SIZE*2).boxed().forEach(pq::enqueue);
 
         System.out.println(pq.size() + "\n");

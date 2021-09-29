@@ -7,12 +7,21 @@ import java.util.Scanner;
 public class DigraphFactory {
     public static Digraph instance(String filename){
         InputStream in = DigraphFactory.class.getResourceAsStream(filename);
-        Scanner scanner = new Scanner(Objects.requireNonNull(in));
-        int V = scanner.nextInt();
-        int E = scanner.nextInt();
+        return instance(in);
+    }
+
+    public static Digraph instance(InputStream in){
+        var scan = new Scanner(Objects.requireNonNull(in));
+
+        int V = scan.nextInt();
+        int E = scan.nextInt();
         Digraph g = new AdjListDigraph(V);
+
+        int v ,w;
         for (int i = 0; i < E; i++) {
-            g.addEdge(scanner.nextInt(), scanner.nextInt());
+            v = scan.nextInt();
+            w = scan.nextInt();
+            g.addEdge(v,w);
         }
 
         return g;
