@@ -6,7 +6,7 @@ import hz.xhxh.algo.collection.bag.SimpleBag;
 public class AdjListWeightedGraph extends AbstractWeightedGraph{
     private final int V;
     private int E;
-    private Bag<Edge>[] edges;
+    private final Bag<Edge>[] edges;
 
     /**Initialize an empty edge-weighted graph with {@code V} vertices and 0 edges
      *

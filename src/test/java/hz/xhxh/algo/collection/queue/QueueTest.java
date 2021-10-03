@@ -1,4 +1,4 @@
-package hz.xhxh.algo.collection;
+package hz.xhxh.algo.collection.queue;
 
 import hz.xhxh.algo.collection.queue.SimpleQueue;
 import org.junit.Test;

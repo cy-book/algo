@@ -1,7 +1,7 @@
 package hz.xhxh.algo.collection.st;
 
 import hz.xhxh.algo.collection.queue.Queue;
-import hz.xhxh.algo.collection.queue.SimpleMaxPQ;
+import hz.xhxh.algo.collection.queue.ArrayMaxPQ;
 
 public class RedBlackTree<K extends Comparable<K>, V> implements ST<K, V> {
     private Node root;
@@ -127,9 +127,9 @@ public class RedBlackTree<K extends Comparable<K>, V> implements ST<K, V> {
 
     @Override
     public Iterable<K> keys() {
-        if (null == root) return new SimpleMaxPQ<K>(0);
+        if (null == root) return new ArrayMaxPQ<K>(0);
 
-        Queue<K> queue = new SimpleMaxPQ<>(size());
+        Queue<K> queue = new ArrayMaxPQ<>(size());
         keys(root, queue);
 
         return queue;

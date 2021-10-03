@@ -3,7 +3,7 @@ package hz.xhxh.algo.collection.queue;
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class SimpleMaxPQ<T extends Comparable<T>> implements MaxPriorityQueue<T> {
+public class ArrayMaxPQ<T extends Comparable<T>> implements MaxPQ<T> {
     /*
     * root == heap[1];
     * parent(n) = floor(n/2);
@@ -14,7 +14,7 @@ public class SimpleMaxPQ<T extends Comparable<T>> implements MaxPriorityQueue<T>
     private T[] heap;
     private int N;
     private final int root = 1;
-    public SimpleMaxPQ(int capacity){
+    public ArrayMaxPQ(int capacity){
         heap = (T[])new Comparable[capacity + 1];
         N = 0;
     }
