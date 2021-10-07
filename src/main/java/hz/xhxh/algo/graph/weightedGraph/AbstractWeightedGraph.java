@@ -9,7 +9,7 @@ public abstract class AbstractWeightedGraph implements WeightedGraph {
     @Override
     public String toString(){
         StringBuilder s = new StringBuilder();
-        s.append(String.format("V: %d, E: %d%n",V(),E()));
+        s.append(String.format("WeightedGraph :  V: %d, E: %d%n",V(),E()));
         for(int v=0; v<V(); v++){
             s.append(v).append(": ");
             for(Edge edge : adj(v)){

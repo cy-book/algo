@@ -84,14 +84,14 @@ public class SimpleStack<T> implements Stack<T>{
         }
     }
 
-//    @Override
-//    public String toString(){
-//        StringBuilder builder = new StringBuilder("[");
-//        for(int i=0; i<=top; i++){
-//            builder.append(stack[i]).append(", ");
-//        }
-//        builder.delete(builder.length()-2,builder.length());
-//        builder.append("]");
-//        return builder.toString();
-//    }
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder("[");
+        for(int i=0; i<=top; i++){
+            builder.append(stack[i]).append(", ");
+        }
+        builder.delete(builder.length()-2,builder.length());
+        builder.append("]");
+        return builder.toString();
+    }
 }
