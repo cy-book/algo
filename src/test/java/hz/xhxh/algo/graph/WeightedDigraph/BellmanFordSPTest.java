@@ -46,18 +46,22 @@ public class BellmanFordSPTest extends TestCase {
         for(int v=0; v<G.V(); v++){
             if(sp.hasPathTo(v))System.out.printf("has path : %d -> %d%n",s, v);
         }
-        for (int t = 0; t < G.V(); t++) {
-            if (sp.hasPathTo(t)) {
-                System.out.printf("%d to %d (%.2f)  ", s, t, sp.distTo(t));
-                for (DirectedEdge e : sp.pathTo(t)) {
-                    System.out.print(e + "   ");
+        try {
+            for (int t = 0; t < G.V(); t++) {
+                if (sp.hasPathTo(t)) {
+                    System.out.printf("%d to %d (%.2f)  ", s, t, sp.distTo(t));
+                    for (DirectedEdge e : sp.pathTo(t)) {
+                        System.out.print(e + "   ");
+                    }
+                    System.out.println();
+                } else {
+                    System.out.printf("%d to %d         no path\n", s, t);
                 }
-                System.out.println();
             }
-            else {
-                System.out.printf("%d to %d         no path\n", s, t);
-            }
+        }catch (IllegalArgumentException e){
+            System.out.println("has navigation cost cycle in graph:\n " + G);
         }
+
 
 
     }
